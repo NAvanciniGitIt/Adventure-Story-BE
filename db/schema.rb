@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_140250) do
+ActiveRecord::Schema.define(version: 2021_03_11_163233) do
 
   create_table "choices", force: :cascade do |t|
     t.boolean "chosen"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "story_id"
   end
 
   create_table "stories", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
     t.integer "check_points"
   end
 
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_140250) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "avatar"
+    t.integer "story_id"
   end
 
 end
